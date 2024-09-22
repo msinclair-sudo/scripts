@@ -1,0 +1,52 @@
+To use Y-LineageTracker for analyzing Y-chromosomal sequencing data, follow these steps:
+
+1. Installation
+Ensure you have the necessary dependencies installed:
+
+Python 3.6 or above
+Python packages: pandas, numpy, scikit-learn, scipy, matplotlib, ete3, networkx
+You can install Y-LineageTracker via GitHub:
+
+git clone https://github.com/Shuhua-Group/Y-LineageTracker.git
+cd Y-LineageTracker
+pip install -r requirements.txt
+
+2. Basic Usage
+Y-LineageTracker operates through command-line subcommands. Here’s a basic example:
+
+LineageTracker <subcommand> [options]
+
+To see overall help messages:
+
+LineageTracker --help
+
+For help on a specific subcommand:
+
+LineageTracker <subcommand> --help
+
+3. Common Subcommands
+Classify NRY haplogroups:
+LineageTracker classify --input <input_file> --output <output_file>
+
+Genotype Y-STRs:
+LineageTracker genotype --input <input_file> --output <output_file>
+
+Perform clustering analysis:
+LineageTracker cluster --input <input_file> --output <output_file>
+
+4. Example Workflow
+Classify haplogroups:
+LineageTracker classify --input your_data.bam --output haplogroups.txt
+
+Genotype Y-STRs:
+LineageTracker genotype --input your_data.bam --output ystr_genotypes.txt
+
+Perform clustering:
+LineageTracker cluster --input haplogroups.txt --output clusters.txt
+
+5. Extracting Regions Based on Gene Positions
+After aligning your Y chromosomes, you can use tools like SAMtools and BEDTools to extract specific regions based on gene positions from your feature table.
+
+For more detailed instructions, you can refer to the Y-LineageTracker manual1.
+
+If you have any specific questions or run into issues, feel free to ask!
